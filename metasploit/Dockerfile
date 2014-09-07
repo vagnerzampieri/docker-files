@@ -1,5 +1,7 @@
 #
 # Metasploit
+# sudo docker build -t metasploit .
+# sudo docker run --privileged -t -i metasploit /bin/bash
 FROM ubuntu
 
 MAINTAINER Vagner Zampieri <vgzampieri@gmail.com>
