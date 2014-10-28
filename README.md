@@ -7,3 +7,4 @@
       mongodb
       python
       rails
+      elixir
