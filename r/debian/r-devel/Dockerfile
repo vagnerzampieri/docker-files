@@ -53,7 +53,9 @@ RUN apt-get update -qq \
    xdg-utils \
    xfonts-base \
    xvfb \
-   zlib1g-dev 
+   zlib1g-dev \
+   git \
+   vim
 
 ## Check out R-devel
 RUN cd /tmp \
