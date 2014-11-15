@@ -55,7 +55,8 @@ RUN apt-get update -qq \
    xvfb \
    zlib1g-dev \
    git \
-   vim
+   vim \
+   tmux
 
 ## Check out R-devel
 RUN cd /tmp \
