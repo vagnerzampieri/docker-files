@@ -14,7 +14,7 @@ RUN apt-get install -y vim tmux curl wget git mercurial
 # Install Go
 RUN \
   mkdir -p /goroot && \
-  curl https://storage.googleapis.com/golang/go1.3.1.linux-amd64.tar.gz | tar xvzf - -C /goroot --strip-components=1
+  curl https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz | tar xvzf - -C /goroot --strip-components=1
 
 # Set environment variables.
 ENV GOROOT /goroot
