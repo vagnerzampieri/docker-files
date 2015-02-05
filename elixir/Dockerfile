@@ -20,3 +20,5 @@ WORKDIR /tmp/elixir-build
 RUN git clone https://github.com/elixir-lang/elixir.git
 WORKDIR elixir
 RUN make && make install
+
+WORKDIR home

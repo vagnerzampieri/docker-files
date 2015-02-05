@@ -3,15 +3,9 @@
 ## start with the Docker 'base R' Debian-based image
 FROM rocker/r-base
 
-## This handle reaches Carl and Dirk
-MAINTAINER "Carl Boettiger and Dirk Eddelbuettel" rocker-maintainers@eddelbuettel.com
-
-## Remain current
-RUN apt-get update -qq \
-&& apt-get dist-upgrade -y
-
 ## From the Build-Depends of the Debian R package, plus subversion
 RUN apt-get update -qq \
+&& apt-get dist-upgrade -y \
 && apt-get install -y --no-install-recommends \
    bash-completion \
    bison \
@@ -56,7 +50,8 @@ RUN apt-get update -qq \
    zlib1g-dev \
    git \
    vim \
-   tmux
+   tmux \
+   r-cran-testthat
 
 ## Check out R-devel
 RUN cd /tmp \
