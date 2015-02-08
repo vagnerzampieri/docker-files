@@ -38,8 +38,8 @@ ENV RVM_DIR $HOME/.rvm
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 RUN curl -L https://get.rvm.io | bash -s stable
 RUN $RVM_DIR/scripts/rvm
-RUN $RVM_DIR/bin/rvm install 2.1.5
-RUN $RVM_DIR/bin/rvm alias create default ruby-2.1.5
+RUN $RVM_DIR/bin/rvm install ruby-head
+RUN $RVM_DIR/bin/rvm alias create default ruby-head
 
 RUN echo "gem: --no-ri --no-rdoc" > $HOME/.gemrc
 
