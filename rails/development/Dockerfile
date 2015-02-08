@@ -61,6 +61,4 @@ RUN curl -L https://raw.githubusercontent.com/vagnerzampieri/vim-dot-files/maste
 EXPOSE 8080 8080
 EXPOSE 3000 3000
 
-VOLUME $HOME/Projects
-
 CMD ['bash']
