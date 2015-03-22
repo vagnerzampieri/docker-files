@@ -21,7 +21,7 @@ RUN apt-get install -qy software-properties-common \
   libqt4-dev \
   libcurl4-openssl-dev \
   phantomjs \
-  nodejs 
+  nodejs
 
 RUN useradd -s /bin/bash -m app \
   && echo "app:app" | chpasswd \
@@ -40,8 +40,6 @@ RUN curl -L https://get.rvm.io | bash -s stable
 RUN $RVM_DIR/scripts/rvm
 RUN $RVM_DIR/bin/rvm install ruby-head
 RUN $RVM_DIR/bin/rvm alias create default ruby-head
-
-RUN echo "gem: --no-ri --no-rdoc" > $HOME/.gemrc
 
 # Config bash
 RUN curl -L https://gist.githubusercontent.com/vagnerzampieri/4492613/raw/0786fe30cd1235e74ac5da6599fdfb85396966c0/.bash_aliases -o ~/.bash_aliases
