@@ -16,7 +16,7 @@ RUN useradd -s /bin/bash -m app \
 
 RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
 
-RUN apt-get install -y python python-dev python-distribute python-pip
+RUN apt-get install -y python python-dev python-distribute python-pip make libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev
 
 RUN pip install flask
 
