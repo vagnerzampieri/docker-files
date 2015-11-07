@@ -20,11 +20,11 @@ RUN apt-get install -y python python-dev python-distribute python-pip
 
 RUN pip install flask
 
-USER myfinance
+USER app
 
-ENV HOME /home/myfinance
+ENV HOME /home/app
 
-WORKDIR /home/myfinance
+WORKDIR /home/app
 
 RUN mkdir $HOME/Projects/
 
