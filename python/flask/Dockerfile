@@ -18,6 +18,9 @@ RUN apt-get install -y tar git curl nano wget dialog net-tools build-essential
 
 RUN apt-get install -y python python-dev python-distribute python-pip make libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev
 
+# Data Science
+RUN apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+
 RUN pip install flask
 
 USER app
