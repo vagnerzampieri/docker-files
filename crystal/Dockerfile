@@ -31,5 +31,9 @@ RUN rm ~/.bashrc \
 
 WORKDIR $HOME/Projects
 
+# App
+EXPOSE 8080 8080
+EXPOSE 3000 3000
+
 CMD ["bash"]
 
