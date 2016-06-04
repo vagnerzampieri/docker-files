@@ -6,10 +6,6 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-
-RUN apt-get install -y vim tmux curl wget git mercurial
-
-
 RUN useradd -s /bin/bash -m marvin \
   && echo "marvin:marvin" | chpasswd \
   && echo "marvin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
