@@ -6,6 +6,10 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+
+RUN apt-get install -y vim tmux curl wget git mercurial
+
+
 RUN useradd -s /bin/bash -m marvin \
   && echo "marvin:marvin" | chpasswd \
   && echo "marvin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
@@ -14,7 +18,7 @@ RUN \
   apt-key adv --keyserver keys.gnupg.net --recv-keys 09617FD37CC06B54 && \
   echo "deb http://dist.crystal-lang.org/apt crystal main" > /etc/apt/sources.list.d/crystal.list && \
   apt-get update && \
-  apt-get install -y crystal gcc pkg-config libssl-dev git curl && \
+  apt-get install -y software-properties-common build-essential libreadline6-dev realpath crystal gcc pkg-config libssl-dev git curl vim tmux && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER marvin
@@ -22,6 +26,7 @@ USER marvin
 ENV HOME /home/marvin
 
 RUN mkdir $HOME/Projects/
+
 
 # Config bash
 RUN curl -L https://gist.githubusercontent.com/vagnerzampieri/4492613/raw/0786fe30cd1235e74ac5da6599fdfb85396966c0/.bash_aliases -o ~/.bash_aliases
@@ -36,4 +41,3 @@ EXPOSE 8080 8080
 EXPOSE 3000 3000
 
 CMD ["bash"]
-
